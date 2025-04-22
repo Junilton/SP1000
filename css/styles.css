@@ -1,0 +1,237 @@
+
+:root {
+  --primary:#7d55c7;--secondary:#5a2ba8;--bg:#f5f5f5;--text:#333;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body {
+  font-family: 'Arial', sans-serif;
+  color: #003366; /* azul escuro fora do banner */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+header,footer{background:var(--primary);color:#fff;}
+header{position:sticky;top:0;z-index:1000;}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;}
+.site-header .logo img{height:50px;}
+.menu-toggle{display:none;font-size:1.5rem;color:#fff;cursor:pointer;}
+nav{flex:1;}
+nav ul{list-style:none;display:flex;gap:1rem;}
+nav a{color:#fff;padding:0.5rem;text-decoration:none;}
+nav a:hover{background:var(--secondary);}
+.menu-item-has-children{position:relative;}
+.sub-menu{display:none;position:absolute;top:100%;left:0;background:var(--primary);border-radius:4px;overflow:hidden;}
+.menu-item-has-children:hover .sub-menu{display:block;}
+.sub-menu li a{display:block;padding:0.5rem 1rem;color:#fff;white-space:nowrap;}
+
+.hero{background:url('../img/banner-home.jpg')center/cover no-repeat;color:#fff;text-align:center;padding:6rem 2rem;}
+.container{max-width:1100px;margin:2rem auto;padding:0 1rem;}
+.services-list,.posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;}
+.servico,.posts article{background:#fff;border-radius:8px;overflow:hidden;position:relative;transition:transform .3s;}
+.servico:hover,.posts article:hover{transform:translateY(-5px);}
+.servico img,.posts article img{width:100%;height:180px;object-fit:cover;}
+.servico-info{padding:1rem;}
+.detalhes-hover{position:absolute;bottom:-100%;left:0;right:0;background:rgba(0,0,0,0.8);color:#fff;padding:1rem;transition:bottom .3s;}
+.servico:hover .detalhes-hover{bottom:0;}
+
+.contact-methods{margin-bottom:1rem;}
+.contact-methods p{display:flex;align-items:center;gap:0.5rem;font-size:1rem;}
+.map-container iframe{width:100%;height:300px;border:0;border-radius:4px;margin:1rem 0;}
+.contact-form{display:grid;gap:1rem;}
+.contact-form input,.contact-form textarea{width:100%;padding:.75rem;border:1px solid #ccc;border-radius:4px;}
+.contact-form button{background:var(--primary);color:#fff;padding:.75rem;border:none;border-radius:4px;cursor:pointer;}
+
+details{background:#fff;border-radius:4px;margin-bottom:1rem;overflow:hidden;}
+summary{padding:1rem;font-weight:600;cursor:pointer;background:#eaeaea;}
+details p{padding:0 1rem 1rem;}
+
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  nav ul{display:none;flex-direction:column;}
+  nav.open ul{display:flex;}
+}
+
+
+@media (max-width: 768px) {
+  .site-header nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--primary);
+  }
+
+  .site-header nav.open ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--primary);
+  }
+
+  .site-nav.open ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+/* Cores atualizadas para tema moderno e profissional */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #003366; /* azul escuro fora do banner */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #004a91;
+  color: white;
+}
+
+a {
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+
+
+
+.btn {
+  color: #003366;
+  border: 2px solid #ffffff;
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  background-color: #e6f0ff;
+  color: #001d4d;
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+
+
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Melhorias para o banner */
+
+
+.banner {
+  background: linear-gradient(to right, #004a91, #007bff);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+
+/* Overlay escuro para melhorar contraste do texto */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Conteúdo do banner sobre o overlay */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Novas cores para textos */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #003366; /* azul escuro fora do banner */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #004a91;
+}
+
+h4, h5, h6 {
+  color: #2c2c2c;
+}
+
+p {
+  color: #2c2c2c;
+}
+
+small, .info, .subtext {
+  color: #555555;
+}
+
+
+/* Banner integrado aos textos */
+.banner {
+  background: linear-gradient(to right, #004a91, #007bff);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+}
+
+.banner-content h1, .banner-content p {
+  color: #f8f9fa;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+.banner h1, .banner h2, .banner p {
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}

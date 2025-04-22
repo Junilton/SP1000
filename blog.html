@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Técnico de Gás</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    article {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+    }
+
+    article img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    article h2 {
+      margin: 10px;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    article p {
+      margin: 0 10px 10px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blog SP1000</h1>
+    <p>Dicas, notícias e orientações sobre sistemas de gás</p>
+  </header>
+
+  <div class="posts">
+    <!-- 48 artigos gerados automaticamente -->
+    <!-- (Conteúdo gerado será inserido aqui - veja abaixo) -->
+  </div>
+
+  <script>
+    const posts = [
+      { title: 'Importância da Manutenção de Gás', desc: 'Entenda por que manutenções periódicas evitam acidentes.' },
+      { title: 'Gás Natural vs GLP', desc: 'Conheça as diferenças e aplicações de cada tipo de gás.' },
+      { title: 'Como Detectar Vazamentos', desc: 'Dicas para identificar sinais de vazamento em casa.' },
+      { title: 'Economia no Uso de Gás', desc: 'Estratégias para reduzir custos com gás.' },
+      { title: 'Conversão de Fogões', desc: 'Processo e benefícios na conversão de fogões.' },
+      { title: 'Projeto de Rede de Gás', desc: 'Como elaborar projetos de tubulação eficientes.' },
+      { title: 'Teste de Estanqueidade', desc: 'Procedimentos para garantir vedação perfeita.' },
+      { title: 'Instalação de Aquecedor a Gás', desc: 'Recomendações para instalação segura.' },
+      { title: 'Normas Técnicas de Gás', desc: 'Principais normas que regem instalações de gás.' },
+      { title: 'Responsabilidade Técnica (ART)', desc: 'Importância da ART em projetos de gás.' },
+      { title: 'Inspeção em Condomínios', desc: 'Cuidados especiais em sistemas coletivos.' },
+      { title: 'Reguladores e Medidores', desc: 'Como escolher e substituir reguladores.' },
+      { title: 'Manutenção Preventiva', desc: 'Vantagens de manutenções programadas.' },
+      { title: 'Vazamento Oculto', desc: 'Técnicas de detecção de vazamentos ocultos.' },
+      { title: 'Iluminação Segura', desc: 'Uso de luminárias compatíveis com gás.' },
+      { title: 'Ventilação Adequada', desc: 'Importância da ventilação em áreas de gás.' },
+      { title: 'Cuidados com Aquecedores', desc: 'Boas práticas para prolongar a vida útil.' },
+      { title: 'Inspeção Governamental', desc: 'O que esperar em vistorias oficiais.' },
+      { title: 'Projetos Residenciais', desc: 'Desafios em instalações domésticas.' },
+      { title: 'Projetos Comerciais', desc: 'Considerações em cozinhas industriais.' },
+      { title: 'Documentação Legal', desc: 'Papel da documentação em instalações.' },
+      { title: 'Limpeza de Tubulações', desc: 'Métodos para remover impurezas.' },
+      { title: 'Sensor de Gás', desc: 'Tecnologia e instalação de detectores.' },
+      { title: 'Atendimento Emergencial', desc: 'Como agir em casos de urgência.' },
+      { title: 'Laudos de Conformidade', desc: 'Finalidade e elaboração de laudos.' },
+      { title: "Drena d'água", desc: 'Sistemas de drenagem em aquecedores.' },
+      { title: 'Pressão de Operação', desc: 'Importância da pressão correta.' },
+      { title: 'Componentes de Segurança', desc: 'Dispositivos essenciais em redes.' },
+      { title: 'Conserto de Registros', desc: 'Técnicas para reparo de registros.' },
+      { title: 'Normas ABNT', desc: 'Principais normas ABNT aplicáveis.' },
+      { title: 'Recarga de GLP', desc: 'Aspectos técnicos na recarga.' },
+      { title: 'Fuga de Gás', desc: 'Procedimentos de contenção rápida.' },
+      { title: 'Conexões Soldadas', desc: 'Cuidados na soldagem de tubulações.' },
+      { title: 'Tubulação Flexível', desc: 'Uso de mangueiras e flexíveis.' },
+      { title: 'Conversão Automática', desc: 'Equipamentos de conversão automática.' },
+      { title: 'Manifold de Gás', desc: 'Projeto e instalação de manifold.' },
+      { title: 'Coleta de Resíduos', desc: 'Destinação de materiais usados.' },
+      { title: 'Aterramento Elétrico', desc: 'Ligação à terra em sistemas.' },
+      { title: 'Teste Hidrostático', desc: 'Diferenças entre testes.' },
+      { title: 'Inspeção Visual', desc: 'Checklist para inspeção visual.' },
+      { title: 'Documentos para Seguro', desc: 'Requisitos para contratação.' },
+      { title: 'Certificação ISO', desc: 'ISO aplicáveis ao setor.' },
+      { title: 'Erros Comuns', desc: 'Principais falhas em instalações.' },
+      { title: 'Materiais Recomendados', desc: 'Tubos, conexões e acessórios.' },
+      { title: 'Cálculo de Vazão', desc: 'Como dimensionar tubulações.' },
+      { title: 'Redes de Alta Pressão', desc: 'Considerações técnicas.' },
+      { title: 'Sustentabilidade', desc: 'Gás natural como alternativa limpa.' },
+      { title: 'Inovação Tecnológica', desc: 'Novas tendências no setor.' },
+    ];
+
+    const container = document.querySelector('.posts');
+    posts.forEach((post, index) => {
+      const article = document.createElement('article');
+      article.innerHTML = `
+        <img src="img/post${index + 1}-thumb.jpg" alt="${post.title}" />
+        <h2>${post.title}</h2>
+        <p>${post.desc}</p>
+      `;
+      container.appendChild(article);
+    });
+  </script>
+</body>
+
+</html>
