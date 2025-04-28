@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Técnico de Gás</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,8 +17,72 @@
     header {
       background-color: #004d40;
       color: white;
-      padding: 20px 0;
+      padding: 10px 0;
       text-align: center;
+      position: relative;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .header-text {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .header-text h1 {
+      margin: 5px 0;
+      font-size: 1.8em;
+    }
+
+    .header-text p {
+      margin: 0;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .site-nav ul li {
+      margin: 0 15px;
+    }
+
+    .site-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
     }
 
     .posts {
@@ -58,18 +123,70 @@
       font-size: 0.9em;
       color: #666;
     }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        background-color: #004d40;
+        width: 100%;
+        display: none;
+      }
+
+      .site-nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <header>
-    <h1>Blog SP1000</h1>
-    <p>Dicas, notícias e orientações sobre sistemas de gás</p>
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Logo SP1000">
+        </a>
+      </div>
+
+      <div class="header-text">
+        <h1>Blog SP1000</h1>
+        <p>Dicas, notícias e orientações sobre sistemas de gás</p>
+      </div>
+
+      <button class="menu-toggle">&#9776;</button>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="posts">
-    <!-- 48 artigos gerados automaticamente -->
-    <!-- (Conteúdo gerado será inserido aqui - veja abaixo) -->
+    <!-- Posts gerados pelo JavaScript -->
   </div>
 
   <script>
@@ -124,17 +241,77 @@
       { title: 'Inovação Tecnológica', desc: 'Novas tendências no setor.' },
     ];
 
+    const images = [
+      'img/post1-thumb.jpg',
+      'img/post2-thumb.jpg',
+      'img/post3-thumb.jpg',
+      'img/post4-thumb.jpg',
+      'img/post5-thumb.jpg',
+      'img/post6-thumb.jpg',
+      'img/post7-thumb.jpg',
+      'img/post8-thumb.jpg',
+      'img/post9-thumb.jpg',
+      'img/post10-thumb.jpg',
+      'img/post11-thumb.jpg',
+      'img/post12-thumb.jpg',
+      'img/post13-thumb.jpg',
+      'img/post14-thumb.jpg',
+      'img/post15-thumb.jpg',
+      'img/post16-thumb.jpg',
+      'img/post17-thumb.jpg',
+      'img/post18-thumb.jpg',
+      'img/post19-thumb.jpg',
+      'img/post20-thumb.jpg',
+      'img/post21-thumb.jpg',
+      'img/post22-thumb.jpg',
+      'img/post23-thumb.jpg',
+      'img/post24-thumb.jpg',
+      'img/post25-thumb.jpg',
+      'img/post26-thumb.jpg',
+      'img/post27-thumb.jpg',
+      'img/post28-thumb.jpg',
+      'img/post29-thumb.jpg',
+      'img/post30-thumb.jpg',
+      'img/post31-thumb.jpg',
+      'img/post32-thumb.jpg',
+      'img/post33-thumb.jpg',
+      'img/post34-thumb.jpg',
+      'img/post35-thumb.jpg',
+      'img/post36-thumb.jpg',
+      'img/post37-thumb.jpg',
+      'img/post38-thumb.jpg',
+      'img/post39-thumb.jpg',
+      'img/post40-thumb.jpg',
+      'img/post41-thumb.jpg',
+      'img/post42-thumb.jpg',
+      'img/post43-thumb.jpg',
+      'img/post44-thumb.jpg',
+      'img/post45-thumb.jpg',
+      'img/post46-thumb.jpg',
+      'img/post47-thumb.jpg',
+      'img/post48-thumb.jpg'
+    ];
+
     const container = document.querySelector('.posts');
     posts.forEach((post, index) => {
       const article = document.createElement('article');
       article.innerHTML = `
-        <img src="img/post${index + 1}-thumb.jpg" alt="${post.title}" />
+        <img src="${images[index]}" alt="${post.title}">
         <h2>${post.title}</h2>
         <p>${post.desc}</p>
       `;
       container.appendChild(article);
     });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+
+    menuToggle.addEventListener('click', () => {
+      siteNav.querySelector('ul').style.display =
+        siteNav.querySelector('ul').style.display === 'flex' ? 'none' : 'flex';
+    });
   </script>
+
 </body>
 
 </html>
