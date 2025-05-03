@@ -1,0 +1,62 @@
+/* === Header responsivo === */
+.site-header {
+  position: relative; /* garante referência para o botão */
+}
+
+.site-header .logo img {
+  border-radius: 50%; /* logo arredondada */
+}
+
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  /* **CRITICAL CHANGE:** */
+  .site-nav ul {
+    display: none; /* Hide on mobile by default */
+    flex-direction: column; /* Stack the links */
+  }
+
+  .site-nav.open ul {
+    display: flex; /* Show when toggled */
+  }
+}
+
+/* === Grade 4 colunas só onde for necessário === */
+/* Serviços (Home) */
+.services-list {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1rem !important;
+}
+
+.services-list img {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Posts (Blog) */
+.posts {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1rem !important;
+}
+
+.posts img {
+  width: 100% !important;
+  display: block !important;
+}
