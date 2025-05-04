@@ -1,20 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.site-nav');
-  const servicosItem = document.querySelector('.menu-item-has-children');
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const siteNav = document.querySelector(".site-nav");
+  const items = document.querySelectorAll(".menu-item-has-children");
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
+  // Toggle menu mobile
+  menuToggle.addEventListener("click", () => {
+    siteNav.classList.toggle("open");
+    menuToggle.classList.toggle("open");
   });
 
-  // Mostrar submenu no hover
-  servicosItem.addEventListener('mouseenter', () => {
-    servicosItem.classList.add('active');
+  items.forEach(item => {
+    const link = item.querySelector("a");
+    link.addEventListener("click", e => {
+      const mobile = window.innerWidth <= 768;
+      if (!mobile) {
+        // No desktop, só deixamos o hover/CSS controlar o submenu
+        return;
+      }
+
+      // === Mobile: abre submenu no 1º clique, navega no 2º ===
+      const isActive = item.classList.contains("active");
+      if (!isActive) {
+        e.preventDefault();
+        items.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+      }
+      // 2º clique: não previne, deixa navegar
+    });
   });
 
-  // Ocultar submenu ao tirar o mouse
-  servicosItem.addEventListener('mouseleave', () => {
-    servicosItem.classList.remove('active');
+  // Fecha submenus ao clicar fora (mobile também fecha via script)
+  document.addEventListener("click", e => {
+    const mobile = window.innerWidth <= 768;
+    if (mobile) {
+      items.forEach(item => {
+        if (!item.contains(e.target)) item.classList.remove("active");
+      });
+    }
   });
 });
